@@ -1,0 +1,36 @@
+@import "mixins";
+@import "variables";
+
+// PROJECT SPECIFIC
+
+@include keyframes(logo-dash) {
+  0% { stroke-dashoffset: -240; }
+  100% {  }
+}
+
+// ALL
+
+.fadein { @include transition(all, 0.4s, ease); }
+.fadeout { @include transition(all, 1s, ease); }
+.noanim { @include transition(none, none, none); }
+
+@include keyframes (shake) {
+	 0% { @include translateX(0); }
+  10% { @include translateX(-10px); }
+  20% { @include translateX(10px); }
+  30% { @include translateX(-10px); }
+  40% { @include translateX(10px); }
+  50% { @include translateX(-10px); }
+  60% { @include translateX(10px); }
+  70% { @include translateX(-10px); }
+  80% { @include translateX(10px); }
+  90% { @include translateX(-10px); }
+ 100% { @include translateX(0); }
+}
+
+@include keyframes(twinkle) {
+	0 { opacity: 1; }
+	100% { opacity: .15; }
+}
+
+.twinkle { @include animation(twinkle, .5s, 0s, infinite); }

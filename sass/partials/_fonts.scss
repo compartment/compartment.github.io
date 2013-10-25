@@ -1,0 +1,49 @@
+$fontpath: "../fonts/";
+
+
+// ENTYPO
+
+@font-face {
+	font-family: "Entypo";
+	src: url('#{$fontpath}entypo/entypo.eot');
+	src: url('#{$fontpath}entypo/entypo.eot?#iefix') format('embedded-opentype'),
+			 url('#{$fontpath}entypo/entypo.woff') format('woff'),
+			 url('#{$fontpath}entypo/entypo.ttf') format('truetype'),
+			 url('#{$fontpath}entypo/entypo.svg#entypo') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Entypo-S";
+	src: url('#{$fontpath}entypo/entypo-social.eot');
+	src: url('#{$fontpath}entypo/entypo-social.eot?#iefix') format('embedded-opentype'),
+			 url('#{$fontpath}entypo/entypo-social.woff') format('woff'),
+			 url('#{$fontpath}entypo/entypo-social.ttf') format('truetype'),
+			 url('#{$fontpath}entypo/entypo-social.svg#entypo-social') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+i {
+	font-family: "Entypo";
+	font-style: normal;
+
+	&.social {
+		font-family: "Entypo-S";
+	}
+}
+
+
+// SERAVEK
+
+@font-face {
+	font-family: "Nevis";
+	src: url('#{$fontpath}nevis/nevis-webfont.eot');
+	src: url('#{$fontpath}nevis/nevis.eot?#iefix') format('embedded-opentype'),
+			 url('#{$fontpath}nevis/nevis-webfont.woff') format('woff'),
+			 url('#{$fontpath}nevis/nevis-webfont.ttf') format('truetype'),
+			 url('#{$fontpath}nevis/nevis-webfont.svg#nevis-webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
