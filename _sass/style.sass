@@ -1,0 +1,354 @@
+@import "compass"
+
+@import "partials/animate"
+@import "partials/animations"
+@import "partials/defaults"
+@import "partials/fonts"
+@import "partials/mixins"
+@import "partials/variables"
+
+@import "breakpoints"
+	
+// Animations
+header
+	+animated(fadeIn, 4s, 0s)
+
+.svg-container
+	// -webkit-backface-visibility: hidden
+	// -webkit-transform: translate3d(0,0,0)
+	// -webkit-transform-style: preserve-3d	
+	//+animated(fadeIn, 3s, 0s)
+
+html
+	font-size: 62.5% // rem unit fix
+	overflow: hidden
+
+body, input, button
+	background: #304A93
+	color: $text
+	font-family: "Open Sans", Arial, sans-serif
+	font-size: 1.4rem
+	height: 100%
+
+	// > *
+	// 	+animated(fadeInUp, 2s, .5s)
+
+	a 
+		border-bottom: 2px solid $link
+		color: darken($link, 25)
+		font-weight: bold
+
+	a, form *
+		@extend .fadeout
+
+		&:hover
+			@extend .fadein
+
+svg
+
+	&[id="logo-gradient"]
+		//shape-rendering: crispEdges
+		// .s0
+		// 	fill: url(#s0)
+		// .s1
+		// 	fill: url(#s1)
+		// .s2
+		// 	fill: url(#s2)
+		// .s3
+		// 	fill: url(#s3)
+		// .s4
+		// 	fill: url(#s4)
+
+// Header
+header
+	height: $header
+	padding: 40px 80px
+	position: absolute
+	top: 0
+	width: 100%
+	z-index: 20
+
+	.logo
+		width: 150px
+
+		svg
+			float: left
+			@include scale(1.75)
+
+			path
+				fill: #FFF
+
+			// polygon
+			// 	fill: none
+			// 	stroke: tint($blue, 20%)
+			// 	stroke-width: .5pt
+
+
+		h1
+			color: #FFF
+			display: inline
+			float: right
+			font-family: "Nevis", sans-serif
+			font-size: 1.2rem
+			letter-spacing: 1px
+			margin-top: 2px
+			text-transform: uppercase
+			vertical-align: middle
+
+// Splash Styles
+.splash
+	//background: desaturate(shade($blue, 75%), 25%)
+	height: 100%
+	margin: 0 auto
+	//overflow: hidden
+	padding: $header*2 80px
+	position: relative
+	width: 100%
+
+	.signup
+		+animated(fadeIn, 2s, 0s)
+		margin: 0 auto
+		position: relative
+		width: 100%
+		z-index: 10
+
+		.intro 
+			color: #FFF
+			float: left
+			font-size: 2.5rem
+			font-weight: 200
+			width: 45%
+
+		form 
+			float: right
+			margin-top: 20px
+			width: 45%
+
+			> *
+				display: block
+
+			input 
+				@include input-placeholder
+					color: $blue
+					font-weight: 400
+				background: #FFF
+				border: 1px solid #FFF
+				color: $blue
+				font-size: 1.8rem
+				font-weight: 500
+				height: 50px
+				text-align: center
+				width: 100%
+
+				-moz-appearance: none
+				-webkit-appearance: none
+
+				&:focus, &:hover 
+					outline: 0
+					@include input-placeholder
+						color: tint($blue, 15%)
+
+			button
+				background: none
+				border: 1px solid #FFF
+				border-top: none
+				color: #FFF
+				cursor: pointer
+				height: 40px
+				letter-spacing: .25rem
+				font-size: 1.2rem
+				font-weight: 700
+				text-transform: uppercase
+				float: right
+				margin: 0
+				width: 40%
+
+				&:hover
+					background: #FFF
+					color: $blue
+
+
+	.svg-container
+		height: 100%
+		width: 100%
+
+		svg 
+			position: absolute
+			left: -40%
+			top: 15%
+			height: 100%
+			width: 100%
+
+			&.outline
+				polygon
+					//+animation(logo-dash, 15s, easeInExpo, 3s, 1)
+					fill: none
+					stroke: shade($blue, 5%)
+					stroke-width: .5pt
+					stroke-linecap: round
+					stroke-linejoin: round
+					stroke-dasharray: 0, 0, 120, 120
+					stroke-dashoffset: 0
+
+			&.shadows
+				polygon
+					//+animated(fadeIn, 2s, 5s)
+					fill: shade($blue, 2%)
+			
+			// &.sides
+			// 	opacity: .5
+			// 	polygon
+			// 		fill: desaturate(shade($blue, 67%), 25%)
+			// 		stroke: shade($blue, 3%)
+			// 		stroke-width: 1pt
+			// 		stroke-linecap: round
+			// 		stroke-linejoin: round
+			// 		stroke-dashoffset: 0
+
+			// 		&:not(.top)
+			// 			fill: desaturate(shade($blue, 77%), 25%)
+
+.break
+	border-bottom: 1px solid #FFF
+	height: 6px
+
+	background: tint($yellow, 50%)
+	+background-image(linear-gradient(fade_out($blue, .85), lighten($yellow, 20)))
+	background-size: 170%
+	border-top: 1px solid shade($yellow, 12%)
+
+	&.top
+		background: $blue
+		+background-image(linear-gradient(fade_out($blue, .85), lighten($yellow, 10)))
+		background-size: 170%
+		border-top: 1px solid shade($blue, 12%)
+
+	&:not(.top)
+		margin-bottom: 20px
+		opacity: .3
+
+	&.short
+		height: 3px
+
+
+.content
+	+animated(fadeInUp, 4s, 0s)
+	padding: 20px 40px
+
+	&:empty
+		padding: 0
+
+	p
+		margin: 20px 0
+
+	// .swap-intro
+	// 	font-size: 2rem
+
+	// 	.swap
+	// 		display: none
+
+	h2, h3, h4, h5, h6
+		color: darken($text, 10)
+
+	h2
+		font-size: 1.8rem
+
+
+
+	
+
+
+// Documentation Styles
+.docs	
+
+	h1, h2, h3, h4, h5, h6
+		color: #517fff
+		font-family: "Nevis", sans-serif
+		font-size: 1.5rem
+		letter-spacing: 1px
+		text-transform: uppercase
+
+	// Beginning Animation
+	.content
+		+animated(fadeInUp, 3s, 0s)
+
+	aside
+		+animated(slideInRight, 3s, 0s)
+
+	.content
+		float: left
+		padding: 40px
+		width: 70%
+
+		header
+			margin-bottom: 20px
+
+		.banner
+			margin-bottom: 20px
+
+			strong
+				font-size: 2.2rem
+				font-weight: 100
+
+	aside 
+		background: #FAFAFA
+		//box-shadow: inset 10px 0 20px 0 #F1F1F1
+		right: 0
+		position: absolute
+		min-width: 215px
+		max-width: 325px
+		height: 100%
+		width: 30%
+
+		h2
+			color: #AAA
+			font-size: 1rem
+			padding: 40px 20px 20px
+
+		nav
+			width: 100%
+
+			ul 
+				list-style: none
+
+				li 
+					//padding: 2px
+
+				a 
+					//background: #FFF
+					//border-bottom: 2px solid #FFF
+					border-bottom: none
+					//box-shadow: inset 2px 0 0 0 $link
+					color: #555
+					display: inline-block
+					font-size: 1.1rem
+					font-weight: 500
+					margin: 2px 0
+					padding: 3px 20px
+					vertical-align: middle
+					width: 100%
+
+					&:hover, &.active
+						box-shadow: -3px 0 0 0 $link
+						color: $link
+
+					&.header
+						box-shadow: none
+						font-size: 1rem
+						font-weight: 900
+						padding-top: 10px
+						text-transform: uppercase
+
+						&:hover
+
+				&.second-level
+					a
+						padding: 3px 30px
+						&:hover, &.active
+							box-shadow: inset 6px 0 0 0 $link
+
+	footer
+		bottom: 0
+		position: absolute
+
+

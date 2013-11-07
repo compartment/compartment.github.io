@@ -1,0 +1,12 @@
+// Palette
+$blue: #304A93;
+$green: desaturate(shade($blue, 75%), 15%);
+$yellow: #ffe174;
+
+$body: tint($yellow, 85%);
+$text: shade($yellow, 45%);
+$link: $blue;
+
+// Variables
+
+$header: 110px

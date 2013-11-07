@@ -24,3 +24,11 @@ Press `control+c` to stop the server.
 If you're already using port 4000, you can specify a different port using the `-P` option:
 
     jekyll serve --watch -P 4001
+
+## Updating Stylesheets
+
+Compass and SASS are used, so you will need the compass gem installed:
+
+    gem install compass
+
+Don't make any changes to the files in the `css` directory. Changes are made to the `.sass` files in the `_sass` directory. The SASS files are converted to CSS when you run jekyll, so make sure you are running jekyll before committing your changes.

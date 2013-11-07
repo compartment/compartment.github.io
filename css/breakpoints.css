@@ -1,0 +1,33 @@
+@media all and (max-width: 770px) {
+  /* line 5, ../_sass/breakpoints.sass */
+  .splash {
+    margin-top: 110px !important;
+    padding: 0 20px !important;
+  }
+  /* line 9, ../_sass/breakpoints.sass */
+  .splash .intro {
+    font-size: 2rem !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+  }
+  /* line 14, ../_sass/breakpoints.sass */
+  .splash form {
+    width: 100% !important;
+  }
+  /* line 17, ../_sass/breakpoints.sass */
+  .splash form input {
+    border-radius: 0 !important;
+  }
+  /* line 20, ../_sass/breakpoints.sass */
+  .splash form button {
+    border: 1px solid white !important;
+    margin-top: 10px !important;
+    height: 50px !important;
+    width: 100% !important;
+  }
+
+  /* line 27, ../_sass/breakpoints.sass */
+  .svg-container svg {
+    top: -20% !important;
+  }
+}
