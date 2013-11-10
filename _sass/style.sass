@@ -1,19 +1,35 @@
-@import "compass"
+@import compass
 
-@import "partials/animate"
-@import "partials/animations"
-@import "partials/defaults"
-@import "partials/fonts"
-@import "partials/mixins"
-@import "partials/variables"
+@import partials/animate
+@import partials/animations
+@import partials/defaults
+@import partials/fonts
+@import partials/mixins
+@import partials/variables
 
-@import "breakpoints"
-	
+@import breakpoints
+
 // Animations
-header
-	+animated(fadeIn, 4s, 0s)
+header 
+	+animated(fadeInUp, 3s, 0s)
 
-.svg-container
+.splash 
+	.intro
+		+animated(fadeInUp, 3s, 1s)
+
+	hr:first-of-type
+		+animated(fadeInUp, 3s, 1.5s)
+
+	.signup
+		+animated(fadeInUp, 3s, 2.5s)
+
+	hr:last-of-type
+		+animated(fadeInUp, 3s, 3s)
+
+	.features
+		+animated(fadeInUp, 3s, 3.5s)
+
+// .svg-container
 	// -webkit-backface-visibility: hidden
 	// -webkit-transform: translate3d(0,0,0)
 	// -webkit-transform-style: preserve-3d	
@@ -21,7 +37,7 @@ header
 
 html
 	font-size: 62.5% // rem unit fix
-	overflow: hidden
+	//overflow-x: hidden
 
 body, input, button
 	background: #304A93
@@ -29,6 +45,9 @@ body, input, button
 	font-family: "Open Sans", Arial, sans-serif
 	font-size: 1.4rem
 	height: 100%
+
+	::selection
+		background: $yellow
 
 	// > *
 	// 	+animated(fadeInUp, 2s, .5s)
@@ -38,15 +57,14 @@ body, input, button
 		color: darken($link, 25)
 		font-weight: bold
 
-	a, form *
+	a, form > *, .features li
 		@extend .fadeout
 
 		&:hover
 			@extend .fadein
 
-svg
-
-	&[id="logo-gradient"]
+// svg
+// 	&[id="logo-gradient"]
 		//shape-rendering: crispEdges
 		// .s0
 		// 	fill: url(#s0)
@@ -62,38 +80,32 @@ svg
 // Header
 header
 	height: $header
-	padding: 40px 80px
+	padding: 60px $bumpers
 	position: absolute
 	top: 0
 	width: 100%
 	z-index: 20
 
 	.logo
-		width: 150px
+		overflow: hidden
+		width: 166px
 
 		svg
 			float: left
-			@include scale(1.75)
+			height: 21px
+			width: 20px
 
 			path
 				fill: #FFF
 
-			// polygon
-			// 	fill: none
-			// 	stroke: tint($blue, 20%)
-			// 	stroke-width: .5pt
-
-
 		h1
+			@extend .headliner
 			color: #FFF
-			display: inline
-			float: right
-			font-family: "Nevis", sans-serif
-			font-size: 1.2rem
-			letter-spacing: 1px
-			margin-top: 2px
-			text-transform: uppercase
+			display: inline-block
+			margin-left: 10px
+			margin-top: -3px
 			vertical-align: middle
+			width: 131px
 
 // Splash Styles
 .splash
@@ -101,254 +113,297 @@ header
 	height: 100%
 	margin: 0 auto
 	//overflow: hidden
-	padding: $header*2 80px
+	padding: 18% $bumpers $bumpers
 	position: relative
 	width: 100%
 
-	.signup
-		+animated(fadeIn, 2s, 0s)
-		margin: 0 auto
+	> *
 		position: relative
-		width: 100%
 		z-index: 10
 
-		.intro 
-			color: #FFF
-			float: left
-			font-size: 2.5rem
+	.intro 
+		color: #FFF
+		float: left
+		font-size: 3rem
+		font-weight: 200
+		margin-bottom: 4%
+		margin-top: 4%
+		margin-right: 2%
+		width: 48%
+
+		strong
 			font-weight: 200
-			width: 45%
 
-		form 
-			float: right
-			margin-top: 20px
-			width: 45%
+	.features
+		clear: both
+		float: left
+		overflow: hidden
+		padding: 4% 0
+		width: 100%
 
-			> *
+		ul
+			list-style: none
+
+			li 
+				float: left
+				text-align: center
+				position: relative
+				width: calc(100%/5) // One-liner
+
+				&:hover
+					@include translateY(-15px)
+
+				&:last-of-type
+					border-bottom: none
+
+				&.ruby 
+					padding: 0px
+
+					.ruby-logo
+						.gem
+							opacity: .8
+							fill: none
+
+						.outline
+							stroke: #FFF
+							stroke-linecap: round
+							stroke-linejoin: round
+							stroke-width: 6px
+
+				&.editing
+					.text-caret
+						rect 
+							fill: #FFF
+
+				&.design
+
+					.brush
+						fill: #FFF
+
+					.layout, .layout2
+						fill: #FFF
+						stroke-width: 10px
+
+					.palette
+						.negative
+							fill: none
+							stroke: #FFF
+							stroke-width: 10
+							stroke-linecap: round
+							stroke-linejoin: round
+
+						.solid
+							fill: #FFF
+
+				&.apps
+					.bulb 
+						.fill
+							fill: none 
+						.outline
+							fill: #FFF
+
+
+				&.hosting
+
+					.multisite
+						height: 45px
+						margin-left: -20px
+						padding-right: 10px
+						overflow: visible
+
+						.fill
+							fill: none
+						.outline 
+							fill: #FFF
+
+				.illo
+					height: 60px
+					//opacity: .5
+					display: inline-block
+					margin-left: 3%
+					padding: 10px
+					width: 80px
+
+				.description
+					color: #FFF
+					margin: 5px auto 0
+					// position: absolute
+					// top: 40%
+					left: 0
+					width: 98%
+
+					h3
+						border: 1px solid rgba(255,255,255,.05)
+						border-radius: 2px
+						display: inline-block
+						font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif
+						font-size: 1.1rem
+						font-weight: 700
+						letter-spacing: .05rem
+						padding: 4px 0 6px
+						text-transform: uppercase
+						width: 95%
+
+					p
+						display: none
+						line-height: 2.6rem
+						margin-top: 10px
+
+						&.subheading
+							@extend .headliner
+							color: darken($yellow, 15)
+							font-size: 1rem
+							letter-spacing: .1rem
+							margin-top: 4px
+
+	hr 
+		background: none
+		border: none
+
+		&:first-of-type
+			border-right: 1px solid rgba(255,255,255,.05)
+			float: left
+			height: 50%
+			width: 1px
+
+		&:last-of-type
+			border-top: 1px solid rgba(255,255,255,.05)
+			height: 1px
+			width: 100%
+
+	.signup
+		float: left
+		overflow: hidden
+		padding: 4.5% 0 0
+		width: 48%
+
+		form
+			padding: 0 0 0 8%
+			width: 100%
+
+			label
+				color: #FFF
 				display: block
+				font-size: 1.8rem
+				font-weight: 400
+				margin-bottom: 12px
+				padding: 0
+
+				// &:before
+				// 	color: #FFF
+				// 	content: "\E728"
+				// 	font-family: "Entypo"
+				// 	font-size: 4.2rem
+				// 	font-weight: 100
+				// 	line-height: 0
+				// 	margin-right: 4px
+				// 	vertical-align: -4px
 
 			input 
 				@include input-placeholder
-					color: $blue
+					color: rgba(255,255,255,.25)
 					font-weight: 400
-				background: #FFF
-				border: 1px solid #FFF
-				color: $blue
-				font-size: 1.8rem
-				font-weight: 500
+					font-size: 1.8rem
+					padding: 0 0 0 1.5%
+				background: none
+				border: 2px solid #FFF
+				//border-image: linear-gradient(rgba(255,255,255,0) 60%, tint($blue, 45%) 60%, tint($blue, 45%) 100%) 15%
+				border-radius: 2px 0 0 2px // does not work with border-image yet
+				color: #FFF
+				float: left
+				font-size: 2rem
+				font-weight: 100
 				height: 50px
-				text-align: center
-				width: 100%
+				padding: 1.5%
+				width: 70%
 
 				-moz-appearance: none
 				-webkit-appearance: none
 
-				&:focus, &:hover 
+				&:focus
 					outline: 0
+				&:hover 
 					@include input-placeholder
-						color: tint($blue, 15%)
+						color: rgba(255,255,255,.15)
 
 			button
-				background: none
-				border: 1px solid #FFF
-				border-top: none
+				background-color: fade_out(shade($blue, 50), .5)
+				border: 2px solid #FFF
+				border-left: none
+				border-radius: 0 2px 2px 0
 				color: #FFF
 				cursor: pointer
-				height: 40px
-				letter-spacing: .25rem
-				font-size: 1.2rem
-				font-weight: 700
-				text-transform: uppercase
+				height: 50px
 				float: right
+				font-weight: 500
 				margin: 0
-				width: 40%
+				padding: 0 3%
+				width: 30%
 
-				&:hover
-					background: #FFF
-					color: $blue
+				span
+					display: inline-block
+					margin: 0 auto
+					width: 100%
+
+					// &:after
+					// 	content: "\E762"
+					// 	display: inline-block
+					// 	font-family: "Entypo"
+					// 	font-size: 3.5rem
+					// 	line-height: 0
+					// 	margin-top: -.8rem
+					// 	text-align: right
+					// 	width: 100%
+
+				&:hover, &:focus
+					background-color: fade_out(shade($blue, 50), .05)
+					color: #FFF
+					outline: 0
 
 
-	.svg-container
+.svg-container
+	position: fixed
+	top: 0
+	left: 0
+	margin-left: -306px
+	height: 100%
+	width: 800px
+
+	svg
+		position: absolute
+		left: -4px
+		top: 0
 		height: 100%
 		width: 100%
 
-		svg 
+		&.outline
+			polygon
+				+animation(logo-dash, 8s, easeInExpo, .5s, infinite)
+				fill: none
+				stroke: shade($blue, 6%)
+				stroke-width: .5pt
+				stroke-linecap: round
+				stroke-linejoin: round
+				stroke-dasharray: 0, 0, 120, 120
+				stroke-dashoffset: 0
+
+		&.shadows
+			polygon
+				//+animated(fadeIn, 2s, 5s)
+				fill: shade($blue, 2%)
+		
+		&.sides
+			opacity: .5
 			position: absolute
-			left: -40%
-			top: 15%
-			height: 100%
-			width: 100%
 
-			&.outline
-				polygon
-					//+animation(logo-dash, 15s, easeInExpo, 3s, 1)
-					fill: none
-					stroke: shade($blue, 5%)
-					stroke-width: .5pt
-					stroke-linecap: round
-					stroke-linejoin: round
-					stroke-dasharray: 0, 0, 120, 120
-					stroke-dashoffset: 0
+			polygon
+				fill: none
+				
+				&.left
+					margin-left: -1px
 
-			&.shadows
-				polygon
-					//+animated(fadeIn, 2s, 5s)
-					fill: shade($blue, 2%)
-			
-			// &.sides
-			// 	opacity: .5
-			// 	polygon
-			// 		fill: desaturate(shade($blue, 67%), 25%)
-			// 		stroke: shade($blue, 3%)
-			// 		stroke-width: 1pt
-			// 		stroke-linecap: round
-			// 		stroke-linejoin: round
-			// 		stroke-dashoffset: 0
+				&.right
+					margin-top: -1px
 
-			// 		&:not(.top)
-			// 			fill: desaturate(shade($blue, 77%), 25%)
-
-.break
-	border-bottom: 1px solid #FFF
-	height: 6px
-
-	background: tint($yellow, 50%)
-	+background-image(linear-gradient(fade_out($blue, .85), lighten($yellow, 20)))
-	background-size: 170%
-	border-top: 1px solid shade($yellow, 12%)
-
-	&.top
-		background: $blue
-		+background-image(linear-gradient(fade_out($blue, .85), lighten($yellow, 10)))
-		background-size: 170%
-		border-top: 1px solid shade($blue, 12%)
-
-	&:not(.top)
-		margin-bottom: 20px
-		opacity: .3
-
-	&.short
-		height: 3px
-
-
-.content
-	+animated(fadeInUp, 4s, 0s)
-	padding: 20px 40px
-
-	&:empty
-		padding: 0
-
-	p
-		margin: 20px 0
-
-	// .swap-intro
-	// 	font-size: 2rem
-
-	// 	.swap
-	// 		display: none
-
-	h2, h3, h4, h5, h6
-		color: darken($text, 10)
-
-	h2
-		font-size: 1.8rem
-
-
-
-	
-
-
-// Documentation Styles
-.docs	
-
-	h1, h2, h3, h4, h5, h6
-		color: #517fff
-		font-family: "Nevis", sans-serif
-		font-size: 1.5rem
-		letter-spacing: 1px
-		text-transform: uppercase
-
-	// Beginning Animation
-	.content
-		+animated(fadeInUp, 3s, 0s)
-
-	aside
-		+animated(slideInRight, 3s, 0s)
-
-	.content
-		float: left
-		padding: 40px
-		width: 70%
-
-		header
-			margin-bottom: 20px
-
-		.banner
-			margin-bottom: 20px
-
-			strong
-				font-size: 2.2rem
-				font-weight: 100
-
-	aside 
-		background: #FAFAFA
-		//box-shadow: inset 10px 0 20px 0 #F1F1F1
-		right: 0
-		position: absolute
-		min-width: 215px
-		max-width: 325px
-		height: 100%
-		width: 30%
-
-		h2
-			color: #AAA
-			font-size: 1rem
-			padding: 40px 20px 20px
-
-		nav
-			width: 100%
-
-			ul 
-				list-style: none
-
-				li 
-					//padding: 2px
-
-				a 
-					//background: #FFF
-					//border-bottom: 2px solid #FFF
-					border-bottom: none
-					//box-shadow: inset 2px 0 0 0 $link
-					color: #555
-					display: inline-block
-					font-size: 1.1rem
-					font-weight: 500
-					margin: 2px 0
-					padding: 3px 20px
-					vertical-align: middle
-					width: 100%
-
-					&:hover, &.active
-						box-shadow: -3px 0 0 0 $link
-						color: $link
-
-					&.header
-						box-shadow: none
-						font-size: 1rem
-						font-weight: 900
-						padding-top: 10px
-						text-transform: uppercase
-
-						&:hover
-
-				&.second-level
-					a
-						padding: 3px 30px
-						&:hover, &.active
-							box-shadow: inset 6px 0 0 0 $link
-
-	footer
-		bottom: 0
-		position: absolute
-
-
+				&:not(.top)
+					fill: shade($blue, 4)

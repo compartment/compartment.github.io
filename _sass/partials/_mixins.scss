@@ -5,7 +5,7 @@ $moz:true;
 $w3:true;
 $ms:true;
 
-// Gradients
+// Complex Gradients ( uses +gradient() vs. Compass background-image )
 @mixin gradient($mode,$direction,$from,$to,$oldDirection:null){
 
 	@if $webkit == true {
@@ -31,16 +31,16 @@ $ms:true;
 // Keyframes
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
-    @content; 
+	@content; 
   }
   @-moz-keyframes #{$name} {
-    @content;
+	@content;
   }
   @-ms-keyframes #{$name} {
-    @content;
+	@content;
   }
   @keyframes #{$name} {
-    @content;
+	@content;
   } 
 }
 
@@ -64,7 +64,7 @@ $image-path: "../img";
 	transition: $property $time $method;
 }
 
-// Animations
+// Complex Animations ( uses +animation() )
 @mixin animation($name, $length:1000ms, $ease:ease, $delay:0ms, $iteration:1, $alternate:normal, $fillmode:both, $backface:hidden) {
 	-webkit-animation-name: $name;
 	-webkit-animation-duration:$length;
@@ -117,8 +117,9 @@ $image-path: "../img";
 	-o-animation: translateZ(0);
 	animation: translateZ(0);
 
-}// Placeholder Text
+}
 
+// Placeholder Text
 @mixin input-placeholder {
 	&.placeholder { @content; }
 	&:-moz-placeholder { @content; }

@@ -1,12 +1,16 @@
 // Palette
 $blue: #304A93;
-$green: desaturate(shade($blue, 75%), 15%);
-$yellow: #ffe174;
+$green: #839848;
+$yellow: #FACC45;
+$red: #D15543;
 
-$body: tint($yellow, 85%);
-$text: shade($yellow, 45%);
+$text: #777;
 $link: $blue;
+
+$blue2: #3F61C1;
+$blue3: #5380FF;
 
 // Variables
 
-$header: 110px
+$header: 110px;
+$bumpers: 80px;

@@ -1,33 +1,188 @@
-@import "partials/variables"
+@import compass
+
+@import partials/mixins
+@import partials/variables
+
+@media all and (max-width: 960px)
+	.splash
+		padding: $bumpers*1.5 $bumpers !important
+		.intro
+			font-size: 2.2rem !important
+			font-weight: 400 !important
+
+		hr 
+			display: none !important
+
+		.signup
+			form
+				button
+					span 
+						&:after
+							display: none !important
+
+
 
 @media all and (max-width: 770px)
+
+	header 
+		//height: $header/2 !important
+		padding: $bumpers/1.75 0 !important
+
+		.logo
+			margin: 0 auto !important
 	
 	.splash
-		margin-top: $header !important
-		padding: 0 20px !important
+		padding: $bumpers*1.25 $bumpers/2 !important
 
 		.intro
-			font-size: 2rem !important
-			margin-bottom: 20px !important
+			font-size: 2.2rem !important
+			margin-bottom: 4% !important
 			width: 100% !important
 
-		form 
+		hr 
+			border: none !important
+			border-top: 1px solid rgba(255,255,255,.05) !important
+			display: inline-block !important
+			//float: left !important
+			height: 1px !important
 			width: 100% !important
 
-			input 
-				border-radius: 0 !important
+		.signup
+			padding: 4% 0 0 0 !important
+			width: 100% !important
 
-			button 
-				border: 1px solid #FFF !important
-				margin-top: 10px !important
-				height: 50px !important
+			form 
+				padding: 0 !important
 				width: 100% !important
 
-	.svg-container 
-		svg 
-			top: -20% !important
+				label 
+					margin-bottom: 15px !important
+					padding: 0 !important
+
+				input
+					border: 2px solid #FFF !important
+					border-image: none !important
+					border-radius: 0 0 2px 2px !important
+					width: 100% !important
+
+				button 
+					border: 2px solid #FFF !important
+					border-radius: 2px !important
+					margin-top: 10px !important
+					width: 100% !important
+
+					span 
+						&:after
+							display: inline-block !important
+
+		.features 
+			li 
+				margin: 40px 0 !important
+				width: 50% !important
+
+				.illo 
+					height: 100px !important
+
+	.svg-container
+		margin-left: 40% !important
+
+	.content
+		padding: 40px 30px !important
+
+		.features
+			h3
+				font-size: 2.2rem !important
+				font-weight: 100 !important
+
+
+
+@media all and (max-width: 460px)
+	.splash 
+		padding: $bumpers*1.25 6% !important
+
+		.intro
+			font-weight: 500 !important
+			line-height: 3rem !important
+			margin-bottom: 6% !important
+
+		.signup
+			form 
+				label
+					font-size: 2.2rem !important
+					font-weight: 200 !important
+
+				input 
+					@include input-placeholder
+						font-weight: 100 !important
+						padding: 0 2% !important
+
+	.svg-container
+		margin-left: -376px !important
 		
 
+
+@media all and (max-width: 320px)
+
+	header
+		height: 90px !important
+
+		.logo
+			margin: 0 auto !important
+
+			h1
+				margin-top: 3px !important
 		
+	.splash
+		height: -webkit-calc(100% + 60px) !important
+		//height: 100% !important
+		overflow: hidden !important
+		padding: 90px 6% !important
+
+		.intro
+			font-size: 1.7rem !important
+			font-weight: 400 !important
+			line-height: 2.4rem !important
+			margin-top: 0 !important
+
+		.signup
+			form 
+				margin-top: 0 !important
+
+				label
+					color: #FFF !important
+					border: none !important
+					font-size: 1.7rem !important
+					font-weight: 400 !important
+					line-height: 2.4rem !important
+					padding: 0 !important
+
+				input
+					background: #FFF !important
+					border-radius: 2px !important
+					color: $blue !important
+
+					@include input-placeholder
+						color: #CCC !important
+						font-weight: 400 !important
+
+				button
+					background: none !important
+					font-size: 1.4rem !important
+					font-weight: 600 !important
+					margin-top: 12px !important
+
+		.features 
+			display: none !important
+
+	.svg-container
+		height: 110% !important
+		margin-left: -308px !important
+		margin-top: -30px !important
+
+		svg 
+			&.sides
+				display: none !important
+
+
 
 

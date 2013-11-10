@@ -4,21 +4,73 @@ title: Compartment - An open-source framework for building websites that are eas
 ---
 
 <div class="splash">
+  <p class="intro">
+    <strong>Compartment</strong> is an open-source framework for building websites that are easy to manage, design, and deploy.
+  </p>
 
-  <div class="signup">
-    <p class="intro">
-      <strong>Compartment</strong> is an open-source framework for building websites that are easy to manage, design, and deploy.
-    </p>
-    <form method="post" target="_blank" novalidate action="http://compartmentcms.us3.list-manage.com/subscribe/post?u=f9e8d7e47d7a81cce4d33379f&amp;id=244ab1b282" name="mc-embedded-subscribe-form">
-      <input name="EMAIL" id="email" type="email" placeholder="Get emailed when we launch."> <button type="submit">Sign Up</button>
-    </form>
-
-  </div> <!-- signup -->
-
-  <div class="svg-container">
-    {% include svg-outline.html %}
-  </div> <!-- svg-container -->
+  <hr>
   
+  <div class="signup">
+    <form method="post" target="_blank" novalidate action="http://compartmentcms.us3.list-manage.com/subscribe/post?u=f9e8d7e47d7a81cce4d33379f&amp;id=244ab1b282" name="mc-embedded-subscribe-form">
+      <label for="email">Sign up for project updates &mdash;</label>
+      <input id="email" type="email" name="EMAIL" autofocus="autofocus" autocapitalize="off" spellcheck="false" placeholder="enter your email">
+      <button type="submit">
+        <span>Sign Up</span>
+      </button>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="features">
+    <ul>
+      <li class="ruby">
+        <div class="illo">
+          {% include svg-logo-ruby.html %}
+        </div>
+        <div class="description">
+          <h3>Written in Ruby</h3>
+        </div>
+      </li>
+      <li class="editing">
+        <div class="illo">
+          {% include svg-text-caret.html %}
+        </div>
+        <div class="description">
+          <h3>In-context Editing</h3>
+        </div>
+      </li>
+      <li class="design">
+        <div class="illo">
+          {% include svg-brush.html %}
+        </div>
+        <div class="description">
+          <h3>Complete Design Control</h3>
+        </div>
+      </li>
+      <li class="apps">
+        <div class="illo">
+          {% include svg-appmarket.html %}
+        </div>
+        <div class="description">
+          <h3>App Marketplace</h3>
+        </div>
+      </li>
+      <li class="hosting">
+        <div class="illo">
+          {% include svg-multisite.html %}
+        </div>
+        <div class="description">
+          <h3>Multi-site Hosting</h3>
+        </div>
+      </li>
+    </ul>
+  </div> <!-- features -->
+
 </div> <!-- splash -->
 
-<div class="content"></div> <!-- content -->
+<div class="svg-container">
+  {% include svg-shadows.html %}
+  {% include svg-outline.html %}
+  {% include svg-sides.html %}
+</div> <!-- svg-container -->

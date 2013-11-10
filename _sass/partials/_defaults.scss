@@ -1,5 +1,36 @@
 @import "mixins";
 
+// PROJECT SPECIFIC
+
+.headliner {
+	font-family: "Nevis", sans-serif;
+	font-size: 1.2rem;
+	font-weight: 900;
+	letter-spacing: .2rem;
+	margin-top: .25rem;
+	text-transform: uppercase;
+}
+
+.smallcaps {
+	font-size: 1rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+}
+
+.notification {
+	border: 2px solid rgba(255,255,255,0);
+	border-radius: 2px;
+
+	&.yield {
+		background: fade_out($yellow, .75);
+		border-color: fade_out($yellow, .5);
+		color: tint($yellow, 40%);
+	}
+}
+
+// GLOBAL DEFAULTS
+
 * { 
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 
