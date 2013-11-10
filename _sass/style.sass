@@ -103,7 +103,7 @@ header
 			color: #FFF
 			display: inline-block
 			margin-left: 10px
-			margin-top: .25rem
+			margin-top: -3px
 			vertical-align: middle
 			width: 131px
 
@@ -204,8 +204,13 @@ header
 
 
 				&.hosting
+
 					.multisite
-						margin-left: -14px
+						height: 45px
+						margin-left: -20px
+						padding-right: 10px
+						overflow: visible
+
 						.fill
 							fill: none
 						.outline 
@@ -214,7 +219,10 @@ header
 				.illo
 					height: 60px
 					//opacity: .5
+					display: inline-block
+					margin-left: 3%
 					padding: 10px
+					width: 80px
 
 				.description
 					color: #FFF
@@ -337,15 +345,15 @@ header
 					margin: 0 auto
 					width: 100%
 
-					&:after
-						content: "\E762"
-						display: inline-block
-						font-family: "Entypo"
-						font-size: 3.5rem
-						line-height: 0
-						margin-top: -.8rem
-						text-align: right
-						width: 100%
+					// &:after
+					// 	content: "\E762"
+					// 	display: inline-block
+					// 	font-family: "Entypo"
+					// 	font-size: 3.5rem
+					// 	line-height: 0
+					// 	margin-top: -.8rem
+					// 	text-align: right
+					// 	width: 100%
 
 				&:hover, &:focus
 					background-color: fade_out(shade($blue, 50), .05)
