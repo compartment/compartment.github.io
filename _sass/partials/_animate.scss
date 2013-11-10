@@ -2,6 +2,7 @@
  Animate Mixin Plugin from thecssguru.freeiz.com/animate based on Dan Eden's fantastic daneden.me/animate
 ============================================================*/
 
+// Use +animated not +animate for these 
 @mixin animated($name: fadeIn, $duration: 1s, $delay: 0.2s, $function: ease, $mode: both) {
   @include experimental(animation, $name $duration $delay $function $mode);
 }

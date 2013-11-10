@@ -14,7 +14,7 @@
 .fadeout { @include transition(all, 1s, ease); }
 .noanim { @include transition(none, none, none); }
 
-@include keyframes (shake) {
+@include keyframes(shake) {
 	 0% { @include translateX(0); }
   10% { @include translateX(-10px); }
   20% { @include translateX(10px); }
@@ -32,5 +32,9 @@
 	0 { opacity: 1; }
 	100% { opacity: .15; }
 }
-
 .twinkle { @include animation(twinkle, .5s, 0s, infinite); }
+
+@include keyframes(spin) {
+  100% { @include rotate(360deg); }
+}
+.spin { @include animation(spin, 0s, 0s, infinite); }
